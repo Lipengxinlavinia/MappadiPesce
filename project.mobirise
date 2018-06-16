@@ -1,0 +1,105 @@
+{
+  "settings": {
+    "name": "地图",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "mobirise4",
+      "title": "Mobirise 4",
+      "styling": {
+        "primaryColor": "#149dcc",
+        "secondaryColor": "#ff3366",
+        "successColor": "#F7ED4A",
+        "infoColor": "#82786E",
+        "warningColor": "#879A9F",
+        "dangerColor": "#B1A374",
+        "mainFont": "Rubik",
+        "display1Font": "Rubik",
+        "display1Size": 4.25,
+        "display2Font": "Playfair Display",
+        "display2Size": 3,
+        "display5Font": "Rubik",
+        "display5Size": 1.5,
+        "display7Font": "Rubik",
+        "display7Size": 1,
+        "display4Font": "Rubik",
+        "display4Size": 1,
+        "isRoundedButtons": true,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "path": "@PROJECT_PATH@",
+    "siteFonts": [
+      {
+        "css": "'Playfair Display', serif",
+        "name": "Playfair Display",
+        "url": "https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i"
+      }
+    ],
+    "versionFirst": "4.7.7",
+    "uniqCompNum": 3,
+    "versionPublish": "4.7.7",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradientBg)": {
+                "background": "linear-gradient(45deg, @bg-value, @color2)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".mbr-figure": {
+              "@media (min-width: 992px)": {
+                "padding-right": "4rem",
+                "& when (@reverseContent)": {
+                  "padding-right": "0",
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                "padding-bottom": "3rem"
+              }
+            },
+            ".mbr-text": {
+              "@media (max-width: 767px)": {
+                "text-align": "center"
+              }
+            }
+          },
+          "_name": "header3",
+          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"checkbox\" title=\"Media On Left/Right\" name=\"reverseContent\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/sistemi-interativi-2000x1414.jpg\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#149dcc\">\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#000000\" condition=\"gradientBg\">\n        \n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                <img src=\"@PROJECT_PATH@/assets/images/sistemi-interativi2-760x537.jpg\" alt=\"Mobirise\" title>\n            </div>\n\n            <div class=\"media-content\">\n                <h1 class=\"mbr-section-title mbr-white pb-3 mbr-fonts-style\" mbr-if=\"showTitle\" mbr-theme-style=\"display-2\">Mappa di Pesce</h1>\n                <h3 class=\"mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style\" mbr-if=\"showSubTitle\" mbr-theme-style=\"display-5\">Trovi il target nel ogni punto<br>Usi Wikitude<br>Puoi guartare un pesce</h3>\n                <div class=\"mbr-section-text mbr-white pb-3 \">\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-theme-style=\"display-5\">Enjoy your experience</p>\n                </div>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/pleroma2/page2.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">1 Piazza Roma</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/caffe2/page5.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">2 Domino<br>Caffè</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/cafoscari2/page4.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">3 Università Cà Foscari di Venezia</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/campo2/page3.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">4 Campo Santa Margherità<br>-Gelateria il Doge</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/chiesa/page7.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">5 Chiesa di <br>San Barnaba</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://zyx215.github.io/maschera0/page6.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">6 Negozio <br>delle maschere</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/libreriaToletta/\" data-app-placeholder=\"Type Text\" target=\"_blank\">7 Libreria <br>Toletta</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/GalleriaAccademia/\" data-app-placeholder=\"Type Text\" target=\"_blank\">8 Gallerie<br>dell'Accademia<br></a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/ChiesaSanVidal/\" data-app-placeholder=\"Type Text\" target=\"_blank\">9 Chiesa di <br>San Vidal</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/ChiesaSanStefano/\" data-app-placeholder=\"Type Text\" target=\"_blank\">10 Chiesa di<br>San Stefano<br></a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/TeatroFenice/\" data-app-placeholder=\"Type Text\" target=\"_blank\">11 Teatro <br>la Fenice</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/SanMarco/\" data-app-placeholder=\"Type Text\" target=\"_blank\">12 Piazza <br>San Marco</a>\n                    <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/FermataVaporetta/\" data-app-placeholder=\"Type Text\" target=\"_blank\">13 Fermata <br>Vaporetta 20</a> <a class=\"btn btn-md btn-white-outline\" href=\"https://lipengxinlavinia.github.io/SanServolo/\" data-app-placeholder=\"Type Text\" target=\"_blank\">14 Isola<br>San Servolo</a></div>\n            </div>\n        </div>\n    </div>\n\n</section>",
+          "_cid": "qV94Q178EV",
+          "_anchor": "header3-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
